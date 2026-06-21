@@ -61,6 +61,31 @@ This repository contains the **AutoFix Finder web portal** — a React + Vite ap
 
 See `.env.example` for all required variables. At minimum you need Firebase, Supabase, and Google Maps credentials configured for full functionality.
 
+## Deploy to GitHub Pages
+
+This app is deployed at [https://danetnavernoye.github.io/autofix-finder/](https://danetnavernoye.github.io/autofix-finder/).
+
+### One-time setup
+
+1. In GitHub repo **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. In **Settings → Secrets and variables → Actions**, add these repository secrets (copy values from your local `.env`):
+   - `VITE_FIREBASE_API_KEY`
+   - `VITE_FIREBASE_AUTH_DOMAIN`
+   - `VITE_FIREBASE_PROJECT_ID`
+   - `VITE_FIREBASE_STORAGE_BUCKET`
+   - `VITE_FIREBASE_MESSAGING_SENDER_ID`
+   - `VITE_FIREBASE_APP_ID`
+   - `VITE_GOOGLE_MAPS_API_KEY`
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+   - `VITE_API_URL` (optional)
+3. In [Firebase Console](https://console.firebase.google.com/) → Authentication → Settings → **Authorized domains**, add:
+   - `danetnavernoye.github.io`
+
+Pushes to `main` automatically build and deploy via GitHub Actions.
+
+> **Note:** You do not need Vercel for Firebase. Firebase runs in the browser on any static host (GitHub Pages, Vercel, Netlify, or Firebase Hosting). Vercel is optional if you prefer easier env var management.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
