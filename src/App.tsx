@@ -18,7 +18,7 @@ import { RegisteredShops } from './features/shops/RegisteredShops';
 import { AppointmentManagement } from './features/appointments/AppointmentManagement';
 
 function App() {
-  const { initializeAuth, loading } = useAuthStore();
+  const { initializeAuth } = useAuthStore();
 
   useEffect(() => {
     initializeAuth();
